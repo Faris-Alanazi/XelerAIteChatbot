@@ -1,13 +1,14 @@
+// vite.config.ts
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
 
 export default defineConfig({
   resolve: {
-    alias: {
-      '@': resolve(__dirname, '.'),
-      '@/lib': resolve(__dirname, 'components/lib')
-    }
+    alias: [
+      { find: '@/lib', replacement: resolve(__dirname, 'components/lib') },
+      { find: '@', replacement: resolve(__dirname, '.') }
+    ]
   },
   build: {
     lib: {
