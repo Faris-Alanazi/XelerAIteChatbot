@@ -153,3 +153,6 @@ export function XelerAIteChatbot({ uuid, direction, ltrConfig, rtlConfig }: Xele
     </div>
   );
 }
+
+// Add a default export so the UMD build exposes the component directly.
+export default XelerAIteChatbot;
