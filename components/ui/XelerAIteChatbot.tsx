@@ -34,7 +34,7 @@ interface XelerAIteChatbotProps {
   rtlConfig: ChatConfig;
 }
 
-export function XelerAIteChatbot({ uuid, direction, ltrConfig, rtlConfig }: XelerAIteChatbotProps) {
+const XelerAIteChatbot = ({ uuid, direction, ltrConfig, rtlConfig }: XelerAIteChatbotProps) => {
   // Choose configuration based on the language direction
   const config = direction === "ltr" ? ltrConfig : rtlConfig;
 
@@ -152,7 +152,6 @@ export function XelerAIteChatbot({ uuid, direction, ltrConfig, rtlConfig }: Xele
       </ExpandableChat>
     </div>
   );
-}
+};
 
-// Add a default export so the UMD build exposes the component directly.
 export default XelerAIteChatbot;
