@@ -16,17 +16,17 @@ export function XelerAIteChatbotDemo() {
           {
             id: 1,
             content: "Hello! How can I help you today?",
-            sender: "ai",
+            sender: "ai"
           },
           {
             id: 2,
             content: "Feel free to ask any questions.",
-            sender: "ai",
-          },
+            sender: "ai"
+          }
         ],
         suggestedMessages: ["Pricing", "Features", "Support"],
         agentAvatar:
-          "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=64&h=64&q=80&crop=faces&fit=crop",
+          "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=64&h=64&q=80&crop=faces&fit=crop"
       }}
       rtlConfig={{
         popupMessage: "تحدث معنا!",
@@ -36,17 +36,17 @@ export function XelerAIteChatbotDemo() {
           {
             id: 1,
             content: "مرحبًا! كيف يمكنني مساعدتك اليوم؟",
-            sender: "ai",
+            sender: "ai"
           },
           {
             id: 2,
             content: "لا تتردد في طرح أي سؤال.",
-            sender: "ai",
-          },
+            sender: "ai"
+          }
         ],
         suggestedMessages: ["التسعير", "الميزات", "الدعم"],
         agentAvatar:
-          "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=64&h=64&q=80&crop=faces&fit=crop",
+          "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=64&h=64&q=80&crop=faces&fit=crop"
       }}
     />
   );

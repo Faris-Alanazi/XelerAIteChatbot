@@ -5,12 +5,12 @@ import {
   ExpandableChat,
   ExpandableChatHeader,
   ExpandableChatBody,
-  ExpandableChatFooter,
-} from "@/components/ui/expandable-chat";
-import { ChatMessageList } from "@/components/ui/chat-message-list";
-import { ChatBubble, ChatBubbleAvatar, ChatBubbleMessage } from "@/components/ui/chat-bubble";
-import { ChatInput } from "@/components/ui/chat-input";
-import { Button } from "@/components/ui/button";
+  ExpandableChatFooter
+} from "./expandable-chat";
+import { ChatMessageList } from "./chat-message-list";
+import { ChatBubble, ChatBubbleAvatar, ChatBubbleMessage } from "./chat-bubble";
+import { ChatInput } from "./chat-input";
+import { Button } from "./button";
 
 interface ChatMessage {
   id: number;
@@ -46,20 +46,20 @@ export function XelerAIteChatbot({ uuid, direction, ltrConfig, rtlConfig }: Xele
     const newUserMessage: ChatMessage = {
       id: messages.length + 1,
       content: messageContent,
-      sender: "user",
+      sender: "user"
     };
     setMessages((prev) => [...prev, newUserMessage]);
     setIsLoading(true);
     try {
       const response = await fetch(
         `https://n8n-automations-w0mh.onrender.com/webhook/chatbot-message?message=${encodeURIComponent(messageContent)}&userId=${encodeURIComponent(uuid)}`,
-        { method: 'POST' }
+        { method: "POST" }
       );
       const data = await response.json();
       const aiMessage: ChatMessage = {
         id: messages.length + 2,
         content: data.response || (direction === "ltr" ? "No response" : "لا يوجد رد"),
-        sender: "ai",
+        sender: "ai"
       };
       setMessages((prev) => [...prev, aiMessage]);
     } catch (error) {
@@ -67,7 +67,7 @@ export function XelerAIteChatbot({ uuid, direction, ltrConfig, rtlConfig }: Xele
       const errorMessage: ChatMessage = {
         id: messages.length + 2,
         content: errorMsg,
-        sender: "ai",
+        sender: "ai"
       };
       setMessages((prev) => [...prev, errorMessage]);
     }
