@@ -43,6 +43,7 @@ const XelerAIteChatbot = ({ uuid, direction, ltrConfig, rtlConfig }: XelerAIteCh
   const [isLoading, setIsLoading] = useState(false);
 
   const sendMessage = async (messageContent: string) => {
+    console.log("[DEBUG] Sending message:", messageContent);
     const newUserMessage: ChatMessage = {
       id: messages.length + 1,
       content: messageContent,
@@ -55,7 +56,9 @@ const XelerAIteChatbot = ({ uuid, direction, ltrConfig, rtlConfig }: XelerAIteCh
         `https://n8n-automations-w0mh.onrender.com/webhook/chatbot-message?message=${encodeURIComponent(messageContent)}&userId=${encodeURIComponent(uuid)}`,
         { method: "POST" }
       );
+      console.log("[DEBUG] Response status:", response.status);
       const data = await response.json();
+      console.log("[DEBUG] Response data:", data);
       const aiMessage: ChatMessage = {
         id: messages.length + 2,
         content: data.response || (direction === "ltr" ? "No response" : "لا يوجد رد"),
@@ -63,6 +66,7 @@ const XelerAIteChatbot = ({ uuid, direction, ltrConfig, rtlConfig }: XelerAIteCh
       };
       setMessages((prev) => [...prev, aiMessage]);
     } catch (error) {
+      console.error("[DEBUG] Fetch error:", error);
       const errorMsg = direction === "ltr" ? "Error fetching response" : "خطأ في جلب الاستجابة";
       const errorMessage: ChatMessage = {
         id: messages.length + 2,
