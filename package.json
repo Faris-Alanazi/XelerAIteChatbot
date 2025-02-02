@@ -1,8 +1,8 @@
 {
-    "name": "my-chatbot-component",
+    "name": "XelerAIteChatbot",
     "version": "1.0.0",
     "scripts": {
-      "build": "your-build-command-here"
+      "build": "build"
     },
     "dependencies": {
       "lucide-react": "^0.268.0",
