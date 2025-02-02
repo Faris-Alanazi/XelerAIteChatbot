@@ -1,0 +1,21 @@
+{
+    "name": "my-chatbot-component",
+    "version": "1.0.0",
+    "scripts": {
+      "build": "your-build-command-here"
+    },
+    "dependencies": {
+      "lucide-react": "^0.268.0",
+      "@radix-ui/react-slot": "^1.0.0",
+      "class-variance-authority": "^0.4.0",
+      "@radix-ui/react-avatar": "^1.0.0",
+      "@radix-ui/react-label": "^1.0.0",
+      "@radix-ui/react-checkbox": "^1.0.0",
+      "react": "^18.0.0",
+      "react-dom": "^18.0.0"
+    },
+    "devDependencies": {
+      "typescript": "^4.0.0"
+    }
+  }
+  
